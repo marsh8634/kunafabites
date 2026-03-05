@@ -9,9 +9,9 @@
     <script src="/_sdk/element_sdk.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-            href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Poppins:wght@300;400;500;600;700&amp;display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Poppins:wght@300;400;500;600;700&amp;display=swap"
             rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         :root {
           --primary-gold: #D4A853;
@@ -254,7 +254,7 @@
         /* Theme toggle button */
         .theme-toggle {
           position: fixed;
-          top: 20px;
+          top: 70px;
           right: 20px;
           z-index: 1000;
           width: 50px;
@@ -328,7 +328,7 @@
     <button
             id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode"> 🌙
     </button>
-    <!-- ========== NAVIGATION ========== -->
+
     <!-- ========== NAVIGATION ========== -->
     <nav id="navbar" class="sticky top-0 z-50 card-bg backdrop-blur-md bg-opacity-90 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -341,23 +341,34 @@
                     <span class="font-display font-bold text-xl" style="color: #D4A853;">Kunafa Bites</span>
                 </div>
 
-                <!-- ✅ Nav Links  -->
+                <!-- ✅ Desktop Nav Links (Hidden on Mobile) -->
                 <div class="hidden md:flex items-center gap-8">
-                    <a href="#menu"
-                       class="nav-link text-sm font-medium hover:text-[#D4A853]">Menu</a>
+                    <a href="#menu" class="nav-link text-sm font-medium hover:text-[#D4A853]">Menu</a>
                     <a href="#gallery" class="nav-link text-sm font-medium hover:text-[#D4A853]">Gallery</a>
-                    <a href="#order"
-                       class="nav-link text-sm font-medium hover:text-[#D4A853]">Order</a>
+                    <a href="#order" class="nav-link text-sm font-medium hover:text-[#D4A853]">Order</a>
                     <a href="#franchise" class="nav-link text-sm font-medium hover:text-[#D4A853]">Franchise</a>
                     <a href="#contact" class="nav-link text-sm font-medium hover:text-[#D4A853]">Contact</a>
                 </div>
 
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-2xl focus:outline-none text-[#D4A853]" id="menuToggle" aria-label="Toggle menu">
+                    <!-- Option 1 – Simple text -->
+                    <span id="menuIcon">☰</span>
+                </button>
+            </div>
+
+            <!-- ✅ Mobile Menu Container (Fixed Positioning) -->
+            <!-- Mobile Menu Links – yeh wala code replace kar do purane se -->
+            <div id="mobile-menu" class="hidden md:hidden absolute top-16 left-0 w-full bg-white dark:bg-[#2A2A2A] shadow-xl z-50 p-4 flex flex-col gap-4 border-t border-gray-200 dark:border-gray-700">
+                <a href="#menu"      class="nav-link text-center py-3 text-lg font-medium text-gray-900 dark:text-gray-100 hover:text-[#D4A853]">Menu</a>
+                <a href="#gallery"   class="nav-link text-center py-3 text-lg font-medium text-gray-900 dark:text-gray-100 hover:text-[#D4A853]">Gallery</a>
+                <a href="#order"     class="nav-link text-center py-3 text-lg font-medium text-gray-900 dark:text-gray-100 hover:text-[#D4A853]">Order</a>
+                <a href="#franchise" class="nav-link text-center py-3 text-lg font-medium text-gray-900 dark:text-gray-100 hover:text-[#D4A853]">Franchise</a>
+                <a href="#contact"   class="nav-link text-center py-3 text-lg font-medium text-gray-900 dark:text-gray-100 hover:text-[#D4A853]">Contact</a>
             </div>
         </div>
-
-
     </nav><!-- ========== HERO SECTION ========== -->
-    <header id="hero" class="hero-pattern min-h-[90%] flex items-center relative overflow-hidden">
+<header id="hero" class="hero-pattern min-h-screen flex items-center...">
         <div class="absolute inset-0 overflow-hidden pointer-events-none">
             <div class="absolute top-20 left-10 text-6xl opacity-20 animate-bounce"
                  style="animation-delay: 0s;">
@@ -783,7 +794,7 @@
                 </div>
 
 
-           <!-- Follow Us -->
+                <!-- Follow Us -->
                 <div class="text-center">
                     <h4 class="font-display font-bold text-xl mb-4" style="color: #D4A853;">Follow Us</h4>
                     <div class="flex gap-4 justify-center">
@@ -828,10 +839,10 @@
                 <!-- Get Your ()wn Website -->
                 <div class="text-center">
                     <h4 class="font-display font-bold text-xl mb-4" style="color: #D4A853;">Get Your Own Website</h4>
-               <div class="space-y-3">
+                    <div class="space-y-3">
 
-                    <p class="opacity-70">"Interested in a website for your business
-                        Contact the developer for details."</p>
+                        <p class="opacity-70">"Interested in a website for your business
+                            Contact the developer for details."</p>
 
                         <a href="tel:+916386509361" class="flex items-center gap-2 justify-center hover:opacity-80 transition-opacity">
                             <svg class="w-5 h-5" style="color: #D4A853;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -851,17 +862,15 @@
                 </div>
 
             </div>
-             <!-- ✅ grid close -->
+            <!-- ✅ grid close -->
 
             <!-- ✅ Divider grid ke bahar -->
             <div style="height:4px; background: linear-gradient(90deg, transparent, #D4A853, transparent); border-radius:2px; margin: 3rem 0 2rem 0;"></div>
-
-            <!-- ✅ Copyright -->
             <div class="text-center opacity-60 text-sm">
                 <p>© 2026 Kunafa Bites | web Designed & Developed by Mohd Arshu</p>
             </div>
 
-        </div> <!-- ✅ container close -->
+        </div> <!-- ✅ container -->
     </footer>
 </div>
 <script>
@@ -989,7 +998,7 @@
       });
     }
 
-    // Dark Mode Toggle
+         // Dark Mode Toggle
     const themeToggle = document.getElementById('theme-toggle');
     const body = document.body;
 
@@ -1015,6 +1024,39 @@
       }
     });
 
+    // ✅ Mobile Menu Toggle Logic (Fixed)
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menuIcon');
+
+    if (menuToggle && mobileMenu && menuIcon) {
+      menuToggle.addEventListener('click', () => {
+        console.log('Menu Button Clicked!'); // Debugging ke liye
+        // Toggle the menu visibility
+        mobileMenu.classList.toggle('hidden');
+
+        // Toggle the icon between Bars and X
+        if (mobileMenu.classList.contains('hidden')) {
+          menuIcon.classList.remove('fa-xmark');
+          menuIcon.classList.add('fa-bars');
+        } else {
+          menuIcon.classList.remove('fa-bars');
+          menuIcon.classList.add('fa-xmark');
+        }
+      });
+
+      // Close mobile menu when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!mobileMenu.contains(e.target) && !menuToggle.contains(e.target) && !mobileMenu.classList.contains('hidden')) {
+          mobileMenu.classList.add('hidden');
+          menuIcon.classList.remove('fa-xmark');
+          menuIcon.classList.add('fa-bars');
+        }
+      });
+    } else {
+      console.error('Menu elements not found!');
+    }
+
     // Smooth scroll for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
@@ -1025,6 +1067,13 @@
             behavior: 'smooth',
             block: 'start'
           });
+
+          // Close mobile menu after clicking a link
+          if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+            mobileMenu.classList.add('hidden');
+            menuIcon.classList.remove('fa-xmark');
+            menuIcon.classList.add('fa-bars');
+          }
         }
       });
     });
@@ -1051,3 +1100,4 @@
 </body>
 
 </html>
+
